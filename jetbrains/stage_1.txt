@@ -1,0 +1,16 @@
+import socket
+import sys
+from socket import socket
+
+if __name__ == '__main__':
+    args = sys.argv  # we get the list of arguments
+    address = (args[1], int(args[2]))
+    password = str(args[3])
+    password = password.encode()
+    server_socket: socket = socket.socket()
+    server_socket.connect(address)
+    server_socket.send(password)
+    response = server_socket.recv(1024)
+    response= response.decode()
+    print(response)
+    server_socket.close()

@@ -1,0 +1,15 @@
+a = input().casefold()
+words = a.split(" ")
+count = 0
+for i in words:
+    for l in i:
+        if l == 's' and i[i.index(l)+1] == 's':
+            count = 0
+            break
+        else:
+            count += 1
+
+if count != 0:
+    print(1)
+else:
+    print(0)

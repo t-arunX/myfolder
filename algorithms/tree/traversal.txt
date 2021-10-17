@@ -1,0 +1,29 @@
+class Node:
+    def __init__(self,key):
+        self.left = None
+        self.right = None
+        self.Key = key
+
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.Key)
+        inorder(root.right)
+def preorder(root):
+    if root:
+        # print(root.Key)
+        preorder(root.left)
+        preorder(root.right)
+def postorder(root):
+    if root:
+        postorder(root.left)
+        postorder(root.right)
+        # print(root.Key)
+root = Node(50)
+root.left = Node(20)
+root.right = Node(30)
+root.left.left = Node(5)
+
+inorder(root)
+preorder(root)
+postorder(root)

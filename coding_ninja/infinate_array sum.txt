@@ -1,0 +1,34 @@
+def generatorfun():
+#query calling loop
+    for j in queries:
+        if(j[1]<= len(values_lst)):
+            x, y = j[0]-1,j[1]
+            return sumInRanges(x,y,values_lst)
+        else:
+            newlst = values_lst
+            for i in values_lst:
+                if(len(newlst) != j[1]):
+                    newlst.append(i)
+                else:
+                    print(newlst)
+                    break
+
+def sumInRanges(x,y,vals):
+    lst = vals
+    sum = 0
+    ans = []
+    for _ in range(queries_count):
+        for k in vals[x:y]:
+            sum = sum+k
+        ans.append(sum)
+    return ans
+
+no_of_testcases =int(input())
+array_size = int(input())
+values_lst = list(map(int,input().split()))
+queries_count = int(input())
+queries = []
+for _ in range(queries_count):
+    queries.append(list(map(int,input().split())))
+
+print(generatorfun())

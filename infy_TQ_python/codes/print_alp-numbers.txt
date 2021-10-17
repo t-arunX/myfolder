@@ -1,0 +1,15 @@
+alp = list()
+alp.append("")
+for i in range(97,123):  # 97,123
+    alp.append(chr(i))
+#  finding number
+found = ""
+chars = input().casefold()
+for i in chars:
+    for j in range(len(alp)):
+        if alp[j] == i:
+            found += str(j) + ' '
+        else:
+            continue
+            
+print(found)

@@ -1,0 +1,13 @@
+sentence = input("enter: ")
+key = input("key: ")
+words = sentence.split()
+count = list()
+for _ in range(len(words)):
+    count.append(0)
+for i in words:
+    i = i.lower()
+    for j in range(len(i)):
+        pos = words.index(i)
+        if(words[pos][j] == key):
+            count[pos] = count[pos]+1
+print(count)

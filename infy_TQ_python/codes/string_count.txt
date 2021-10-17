@@ -1,0 +1,35 @@
+# prints count of chars in a given string
+eg:dw2df4=dwdwdfdfdfdf
+
+a = input("enter the string: ")
+val = ""
+for i in a:
+    if not i.isalpha():
+        rep = int(i)
+        if a[a.index(i)+1] is i.isalpha():
+            for _ in range(rep):
+               print(val, end ="")
+            val = "" 
+        else:
+            rep += int(i)
+    else:
+        val += i
+print("done")
+
+
+
+------------------------------------------------------------------------------------
+#working 
+
+a = input()
+val = ""
+rep = 1
+for i in a:
+    if not i.isalpha():
+        rep = int(i)
+        for _ in range(rep):
+            print(val, end ="")
+        val = "" 
+    else:
+        val = val + i
+print("done")
